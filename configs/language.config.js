@@ -1,4 +1,4 @@
-const { CPP, C, PYTHON, JAVA, NODEJS, RUBY, PROMPTV1, PROMPTV2 } = require('../enums/supportedLanguages')
+const { CPP, C, PYTHON, JAVA, NODEJS, RUBY, PROMPTV1, PROMPTV2, REACTJS, ANGULAR, VUEJS } = require('../enums/supportedLanguages')
 const ONE_MB = 1024 // ulimit uses Kilobyte as base unit
 const ALLOWED_RAM = process.env.ALLOWED_RAM || 512
 
@@ -50,6 +50,27 @@ const LANGUAGES_CONFIG = {
     },
     [PROMPTV2]: {
         model: 'gpt-3.5-turbo-1106',
+    },
+    [REACTJS]: {
+        compile: 'npx create-react-app solution',
+        run: 'cd solution && npm start',
+        timeout: 30,
+        filename: 'solution',
+        memory: ALLOWED_RAM * ONE_MB,
+    },
+    [ANGULAR]: {
+        compile: 'ng new solution',
+        run: 'cd solution && ng serve',
+        timeout: 30,
+        filename: 'solution',
+        memory: ALLOWED_RAM * ONE_MB,
+    },
+    [VUEJS]: {
+        compile: 'vue create solution',
+        run: 'cd solution && npm run serve',
+        timeout: 30,
+        filename: 'solution',
+        memory: ALLOWED_RAM * ONE_MB,
     },
 }
 
