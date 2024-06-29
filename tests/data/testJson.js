@@ -298,6 +298,103 @@ const testCases = [
             error: 0,
         },
     },
+    //from here on, the test cases are for the new languages
+    {
+        
+        name: 'reactjs : hello world',
+        reqObject: {
+            language: 'reactjs',
+            script: 'console.log(\'hello world\')',
+        },
+        expectedResponse: {
+            val: 'hello world\n',
+            status: 200,
+            error: 0,
+        },
+    },
+    {
+        
+        name: 'reactjs : print stdin',
+        reqObject: {
+            language: 'reactjs',
+            script:
+                'process.stdin.setEncoding(\'utf8\'); \n ' +
+                'process.stdin.on(\'data\', (input) => { \n ' +
+                '  console.log(input); \n ' +
+                ' \n ' +
+                '}); \n ',
+            stdin: '1 2 3',
+        },
+        expectedResponse: {
+            val: '1 2 3\n',
+            status: 200,
+            error: 0,
+        },
+    },
+    {
+        
+        name: 'angular : hello world',
+        reqObject: {
+            language: 'angular',
+            script: 'console.log(\'hello world\')',
+        },
+        expectedResponse: {
+            val: 'hello world\n',
+            status: 200,
+            error: 0,
+        },
+    },
+    {
+        
+        name: 'angular : print stdin',
+        reqObject: {
+            language: 'angular',
+            script:
+                'process.stdin.setEncoding(\'utf8\'); \n ' +
+                'process.stdin.on(\'data\', (input) => { \n ' +
+                '  console.log(input); \n ' +
+                ' \n ' +
+                '}); \n ',
+            stdin: '1 2 3',
+        },
+        expectedResponse: {
+            val: '1 2 3\n',
+            status: 200,
+            error: 0,
+        },
+    },
+    {
+        
+        name: 'vuejs : hello world',
+        reqObject: {
+            language: 'vuejs',
+            script: 'console.log(\'hello world\')',
+        },
+        expectedResponse: {
+            val: 'hello world\n',
+            status: 200,
+            error: 0,
+        },
+    },
+    {
+        
+        name: 'vuejs : print stdin',
+        reqObject: {
+            language: 'vuejs',
+            script:
+                'process.stdin.setEncoding(\'utf8\'); \n ' +
+                'process.stdin.on(\'data\', (input) => { \n ' +
+                '  console.log(input); \n ' +
+                ' \n ' +
+                '}); \n ',
+            stdin: '1 2 3',
+        },
+        expectedResponse: {
+            val: '1 2 3\n',
+            status: 200,
+            error: 0,
+        },
+    }
 ]
 
 module.exports = { testCases }
